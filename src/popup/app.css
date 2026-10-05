@@ -1,0 +1,84 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#ffffff, #1b1b22);
+  --fg: light-dark(#15141a, #f4f4f5);
+  --muted: light-dark(#6b6b76, #a8a8b3);
+  --border: light-dark(#e2e2e8, #3a3a44);
+  --accent: #0060df;
+  --accent-fg: #ffffff;
+  --danger: #d70022;
+  --card: light-dark(#f6f6f8, #23222b);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+#app { padding: 12px; }
+
+h1 { font-size: 15px; margin: 0 0 8px; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 12px 0 6px; }
+
+button {
+  font: inherit;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+button.danger { color: var(--danger); border-color: var(--danger); }
+button:disabled { opacity: 0.5; cursor: default; }
+button.small { padding: 2px 8px; font-size: 12px; }
+
+input, select {
+  font: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  width: 100%;
+}
+label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  padding: 10px;
+}
+
+.row { display: flex; gap: 6px; align-items: center; }
+.spread { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.muted { color: var(--muted); }
+.mono { font-family: ui-monospace, Consolas, monospace; font-size: 12px; }
+
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
+.tabs button {
+  border: none;
+  background: none;
+  border-radius: 6px 6px 0 0;
+  padding: 6px 10px;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tabs button:hover { color: var(--fg); border-color: transparent; }
+.tabs button.active { color: var(--fg); font-weight: 600; border-bottom-color: var(--accent); }
+.warn {
+  border: 1px solid #e5a50a;
+  background: light-dark(#fff8e1, #3a2f00);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 8px 0;
+}
